@@ -17,7 +17,7 @@ Consider this code that uses strings throughout:
 ```php
 // Strings everywhere — anything goes
 $order->update(['status' => 'pending']);
-$order->update(['status' => 'pneding']);  // Typo — no error, no warning
+$order->update(['status' => 'pending']);  // Typo — no error, no warning
 $order->update(['status' => 'banana']);   // Nonsense — still no error
 
 if ($order->status === 'shiped') {       // Typo in comparison — always false
@@ -32,7 +32,7 @@ Type-safe code eliminates this:
 ```php
 $order->update(['status' => OrderStatus::Pending]);
 
-// OrderStatus::Pneding — your IDE catches it immediately
+// OrderStatus::Pending — your IDE catches it immediately
 // OrderStatus::Banana — does not exist, cannot be used
 
 if ($order->status === OrderStatus::Shipped) {
